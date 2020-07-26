@@ -1,0 +1,209 @@
+/**index.wxss**/
+page {
+  background: #f6f6f6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.header-search {
+  padding: 20rpx 30rpx;
+  height: 60rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+
+.header-search .search-input {
+  height: inherit;
+  width: 100%;
+  font-size: 28rpx;
+}
+
+.page-header {
+  position: relative;
+  padding-top: 40rpx;
+  display: flex;
+  flex-flow: row nowrap;
+  background-color: #fff;
+}
+
+.page-header .header-item {
+  position: relative;
+  flex: 1;
+  padding-bottom: 20rpx;
+  text-align: center;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 1px;
+  background-color: #ddd;
+  transform: scaleY(0.5);
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 1px;
+  height: 80rpx;
+  margin-top: -40rpx;
+  background-color: #dddd;
+  transform: scaleX(0.5);
+}
+.page-header .header-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 30rpx;
+  right: 30rpx;
+  border-bottom: 2px solid orange;
+}
+
+.header-item.active .item-desc {
+  color: rgb(36, 27, 27);
+}
+
+.header-item.active .item-price {
+  color: #333;
+}
+
+.page-header .item-desc {
+  font-size: 24rpx;
+  color: #999;
+}
+
+.page-header .item-price {
+  color: #999;
+}
+
+.page-header .price-unit {
+  font-size: 24rpx;
+}
+
+.page-header .price {
+  font-size: 40rpx;
+}
+
+
+.bill-warp {
+  background-color: #fff;
+  margin-top: 30rpx;
+}
+
+.bill-item {
+  position: relative;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding:20rpx 30rpx;
+  box-sizing: border-box;
+}
+
+.bill-item::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 30rpx;
+  height: 1px;
+  background-color: #ddd;
+  transform: scaleY(0.5);
+}
+
+.bill-item .bill-right {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+}
+
+.bill-item  .bill-data {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  text-align: right;
+}
+
+.bill-item .license-plate {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+  line-height: 1.8;
+}
+
+.bill-item .bill-sub {
+  font-size: 28rpx;
+  color: #999;
+  line-height: 2;
+}
+.bill-item .bill-sub__warp {
+  display: flex;
+  flex-flow: row nowrap;
+}
+.bill-item .bill-sub__warp  .pay-type {
+  margin-left: 20rpx;
+}
+.bill-item .bill-price {
+  font-size: 36rpx;
+  color: rgb(201, 66, 35);
+}
+.bill-item .bill-price.await-pay {
+  color: rgb(98, 110, 96);
+}
+.bill-item .bill-price .bill-price__unit  {
+  font-size: 24rpx;
+}
+
+.bill-item .oil-total {
+  font-size: 36rpx;
+  color: rgb(52, 154, 118);
+}
+
+.bill-item .oil-total .oil-total__unit {
+  font-size: 24rpx;
+}
+
+.bill-item .change-status {
+  margin-left: 28rpx;
+}
+
+.record-price {
+  position: fixed;
+  bottom: 100rpx;
+  right: 20rpx;
+  width: 100rpx;
+  height: 100rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 50%;
+  background-color: orange;
+  color: #fff;
+}
+
+.editor-mode {
+  position: fixed;
+  right: 20rpx;
+  bottom: 240rpx;
+  width: 100rpx;
+  height: 100rpx;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 100rpx;
+  border-radius: 50%;
+  color: #fff;
+  background-color: rgb(26, 101, 240);
+}
+
+.loaded-finish {
+  margin: 40rpx 0;
+  display: flex;
+  flex-flow: row nowrap;
+  color: #999;
+  justify-content: center;
+  align-items: center;
+}

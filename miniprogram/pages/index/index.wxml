@@ -1,0 +1,75 @@
+<!-- 搜索框 -->
+<view class="header-search">
+  <input
+    class="search-input"
+    type="text"
+    confirm-type="search"
+    placeholder="输入搜索条件: 车牌号、油量、消费者姓名..."
+    bindconfirm="onSearch"
+  />
+</view>
+
+<!-- 头部 -->
+<view class="page-header">
+  <view class="header-item {{tabActive === 1 ? 'active' : ''}}" bindtap="onTabChange" data-active="1">
+    <view class="item-desc">已入账</view>
+    <view class="item-price">
+      <text class="price-unit">¥</text>
+      <text class="price">{{income}}</text>
+    </view>
+  </view>
+  <view class="header-item {{tabActive === 2 ? 'active' : ''}}" bindtap="onTabChange" data-active="2">
+    <view class="item-desc">待入帐</view>
+    <view class="item-price">
+      <text class="price-unit">¥</text>
+      <text class="price">{{awaitIncome}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 账单列表 -->
+<view class="bill-warp">
+  <view class="bill-item" wx:for="{{sourceData}}" wx:key="_id">
+    <view class="bill-left">
+      <view class="license-plate">{{item.licensePlate}}</view>
+      <view class="bill-sub bill-sub__warp">
+        <view>{{item.buyUserName}}</view>
+        <view class="bill-sub pay-type">
+          <block wx:if="{{item.payType === '1'}}">
+            微信
+          </block>
+          <block wx:elif="{{item.payType === '2'}}">
+            支付宝
+          </block>
+          <block wx:elif="{{item.payType === '3'}}">现金</block>
+          <block wx:else>待入账</block>
+        </view>
+      </view>
+      <view class="bill-sub">{{item.date}}</view>
+    </view>
+    <view class="bill-right">
+      <view class="bill-data">
+        <view class="bill-price {{tabActive === 2 ? 'await-pay' : ''}}">
+          <text class="bill-price__unit">¥ </text>
+          {{item.price / 100}}
+        </view>
+        <view class="oil-total"><text class="oil-total__unit">L</text> {{item.gasoline / 100}}</view>
+      </view>
+      <radio class="change-status" hidden="{{!hasEditorMode}}" />
+    </view>
+  </view>
+</view>
+
+<mp-loading wx:if="{{loading}}" type="circle"></mp-loading>
+<!-- 数据加载完毕提示 -->
+<view wx:if="{{loadedFinish && !loading}}" class="loaded-finish">亲,所有数据已加载完成</view>
+
+<!-- 记账入口 -->
+<view class="record-price" bindtap="handleJumpToRecord">记一笔</view>
+
+<!-- 编辑入口 -->
+<view class="editor-mode" hidden="{{tabActive !== 2}}" bindtap="onEditorBill">
+  {{hasEditorMode ? '退出' : '编辑'}}
+</view>
+
+

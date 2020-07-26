@@ -1,0 +1,131 @@
+<view class="container">
+  <!-- 账单金额 -->
+	<view class="input-area">
+		<input
+			placeholder="请输入金额"
+			data-key="price"
+			data-key="price"
+			value="{{price}}"
+			type="digit"
+			bindinput="handleChangeData"
+		/>
+	</view>
+
+  <!-- 账单分类 -->
+	<view class="cell">
+		<view class="cell-left">账单分类</view>
+		<view class="cell-main">
+			<radio-group bindchange="handleChangeData"  data-key="billClassify" class="bill-classify">
+				<label wx:for="{{classifySelectData}}" class="bill-classify__label" wx:key="id">
+					<radio value="{{item.id}}" class="bill-classify__radio" checked="{{billClassify === item.id}}"/>
+					<view class="weui-cell__bd">{{item.name}}</view>
+				</label>
+			</radio-group>
+		</view>
+	</view>
+	
+
+  <!-- 支付方式 -->
+  <!-- <view>
+		<picker
+			mode="selector"
+			data-key="payType"
+			bindchange="handleChangeData"
+			range="{{paySelectData}}"
+			range-key="name"
+			disabled="{{!billClassify || billClassify * 1 === 2}}"
+		>
+      <view class="cell">
+        <view class="cell-left">支付方式</view>
+        <view class="cell-main">{{payTypeDesc}}</view>
+      </view>
+    </picker>
+	</view> -->
+	<view class="cell">
+		<view class="cell-left">支付方式</view>
+		<view class="cell-main">
+			<radio-group
+			 	bindchange="handleChangeData"
+				data-key="payType"
+				class="bill-classify"
+			>
+				<label
+					wx:for="{{paySelectData}}"
+					class="bill-classify__label"
+					wx:key="id">
+					<radio
+						value="{{item.id}}"
+						class="bill-classify__radio"
+						checked="{{payType === item.id}}"
+						disabled="{{!billClassify || billClassify * 1 === 2}}"
+					/>
+					<view class="weui-cell__bd">{{item.name}}</view>
+				</label>
+			</radio-group>
+		</view>
+	</view>
+ 
+
+  <!-- 支付日期 -->
+	<picker mode="date" value="{{payDate}}" data-key="payDate" start="{{startAt}}" end="{{endAt}}" bindchange="handleChangeData">
+		<view class="cell">
+			<view class="cell-left">
+				支付日期
+			</view>
+			<view class="cell-main">
+				{{payDate}}
+			</view>
+		</view>
+	</picker>
+
+
+  <!-- 支付时间 -->
+	<picker mode="time" data-key="payTime"  value="{{payTime}}" start="00:00" end="23:59" bindchange="handleChangeData">
+		<view class="cell">
+			<view class="cell-left">
+				支付时间
+			</view>
+			<view class="cell-main">{{payTime}}</view>
+		</view>
+	</picker>
+
+	<!-- 油量记录 -->
+	<view class="cell">
+		<view class="cell-left">油量</view>
+		<view class="cell-main">
+			<input placeholder="输入油量..." type="digit" data-key="gasoline" value="{{gasoline}}" bindinput="handleChangeData" />
+		</view>
+	</view>
+
+	<!-- 车牌号码 -->
+	<view class="cell">
+		<view class="cell-left">车牌号</view>
+		<view class="cell-main">
+			<input placeholder="输入车牌号..." data-key="licensePlate" value="{{licensePlate}}" bindinput="handleChangeData" />
+		</view>
+	</view>
+
+	<!-- 车牌号码 -->
+	<view class="cell">
+		<view class="cell-left">姓名</view>
+		<view class="cell-main">
+			<input placeholder="输入消费者姓名,选填" data-key="buyUserName" value="{{buyUserName}}" bindinput="handleChangeData" />
+		</view>
+	</view>
+
+	<!-- 账单备注 -->
+	<view class="cell">
+		<view class="cell-left">账单备注</view>
+		<view class="cell-main">
+			<input placeholder="... 选填 ..." data-key="description" value="{{description}}" bindinput="handleChangeData" />
+		</view>
+	</view>
+
+
+  <!-- 底部按钮 -->
+	<view class="footer">
+		<view class="footer-btn save" bindtap="handleSave">保存</view>
+		<view class="footer-btn again-record" bindtap="handleAgainSave">再记一笔</view>
+	</view>
+
+</view>

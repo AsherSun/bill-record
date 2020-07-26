@@ -1,0 +1,81 @@
+/* miniprogram/pages/createBill/index.wxss */
+.input-area {
+  border-bottom: 1px solid #eec1b6;
+  padding: 65rpx 0 40rpx;
+}
+
+.input-area input {
+  color: #F75139;
+  height: 60rpx;
+  font-size: 48rpx;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  width: 100%;
+  font-size: 24rpx;
+  z-index: 10;
+
+}
+
+.footer .footer-btn {
+  height: 90rpx;
+  flex: 1;
+  text-align: center;
+  line-height: 90rpx;
+}
+
+.footer .save {
+  background-color: #FD8200;
+  color: #fff;
+}
+
+.footer .again-record {
+  background-color: #EFEEF3;
+  color: #767676;
+}
+
+.cell {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  height: 90rpx;
+
+}
+
+.cell-main {
+  flex: 1;
+  margin-left: 24rpx;
+  color: #454545;
+}
+
+.cell-left {
+  min-width: 128rpx;
+  text-align: right;
+  color: #909090;
+}
+
+.bill-classify, .bill-classify .bill-classify__label {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  font-size: 28rpx;
+}
+
+.bill-classify .bill-classify__label + .bill-classify__label {
+  margin-left: 30rpx;
+}
+
+/* .input-area input::-webkit-input-placeholder {
+  color: #F75139;
+}
+.input-area input::placeholder {
+  color: #F75139;
+}
+.input-area input::-moz-placeholder {
+  color: #F75139;
+} */
