@@ -2,7 +2,7 @@ let datebase = null;
 export function getDB() {
   if (datebase) return datebase;
   datebase = wx.cloud.database({
-    env: 'test-1c449d'
+    env: 'dev-a5cf14'
   });
   return datebase;
 }

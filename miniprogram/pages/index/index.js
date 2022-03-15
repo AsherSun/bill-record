@@ -85,7 +85,7 @@ Page({
       .skip(this.page)
       .orderBy('createdAt', 'desc')
       .where({
-        _openid: this.openId,
+        // _openid: this.openId,
         billClassify: `${tabActive}`
       })
       .get()

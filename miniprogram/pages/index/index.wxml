@@ -1,5 +1,5 @@
 <!-- 搜索框 -->
-<view class="header-search">
+<!-- <view class="header-search">
   <input
     class="search-input"
     type="text"
@@ -7,7 +7,7 @@
     placeholder="输入搜索条件: 车牌号、油量、消费者姓名..."
     bindconfirm="onSearch"
   />
-</view>
+</view> -->
 
 <!-- 头部 -->
 <view class="page-header">
@@ -68,8 +68,8 @@
 <view class="record-price" bindtap="handleJumpToRecord">记一笔</view>
 
 <!-- 编辑入口 -->
-<view class="editor-mode" hidden="{{tabActive !== 2}}" bindtap="onEditorBill">
+<!-- <view class="editor-mode" hidden="{{tabActive !== 2}}" bindtap="onEditorBill">
   {{hasEditorMode ? '退出' : '编辑'}}
-</view>
+</view> -->
 
 
